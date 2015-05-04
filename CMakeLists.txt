@@ -23,6 +23,7 @@ ADD_EXECUTABLE(PassArgs PassArgs.cpp)
 ADD_EXECUTABLE(Future Future.cpp)
 ADD_EXECUTABLE(Async Async.cpp)
 ADD_EXECUTABLE(BadPass BadPass.cpp)
+ADD_EXECUTABLE(BadConst BadConst.cpp)
 
 SET(CONFIGURED_ONCE TRUE CACHE INTERNAL
         "A flag showing that CMake has configured at least once.")
