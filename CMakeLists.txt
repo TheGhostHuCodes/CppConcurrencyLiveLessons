@@ -21,6 +21,7 @@ ADD_EXECUTABLE(Barrier Barrier.cpp)
 ADD_EXECUTABLE(FunctionObj FunctionObj.cpp)
 ADD_EXECUTABLE(PassArgs PassArgs.cpp)
 ADD_EXECUTABLE(Future Future.cpp)
+ADD_EXECUTABLE(Async Async.cpp)
 
 SET(CONFIGURED_ONCE TRUE CACHE INTERNAL
         "A flag showing that CMake has configured at least once.")
