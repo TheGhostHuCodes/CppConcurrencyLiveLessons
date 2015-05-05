@@ -4,6 +4,14 @@ PROJECT("IntroductionToCppConcurrencyLiveLessons")
 ADD_COMPILE_OPTIONS(-std=c++11)
 SET(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 MESSAGE("${CMAKE_CXX_COMPILER_ID}")
+
+# Find Boost.
+IF(APPLE OR WIN32)
+    set(Boost_USE_STATIC_LIBS TRUE)
+ENDIF(APPLE OR WIN32)
+FIND_PACKAGE(Boost 1.57 REQUIRED COMPONENTS system filesystem)
+INCLUDE_DIRECTORIES(SYSTEM ${Boost_INCLUDE_DIRS})
+
 IF("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" OR
         "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     SET(WARNINGS "-Weverything -Wall -Wextra -Wno-c++98-compat \
@@ -24,6 +32,8 @@ ADD_EXECUTABLE(Future Future.cpp)
 ADD_EXECUTABLE(Async Async.cpp)
 ADD_EXECUTABLE(BadPass BadPass.cpp)
 ADD_EXECUTABLE(BadConst BadConst.cpp)
+ADD_EXECUTABLE(FileList FileList.cpp)
+TARGET_LINK_LIBRARIES(FileList ${Boost_LIBRARIES})
 
 SET(CONFIGURED_ONCE TRUE CACHE INTERNAL
         "A flag showing that CMake has configured at least once.")
