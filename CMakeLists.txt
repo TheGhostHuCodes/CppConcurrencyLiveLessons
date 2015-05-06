@@ -36,6 +36,7 @@ ADD_EXECUTABLE(FileList FileList.cpp)
 TARGET_LINK_LIBRARIES(FileList ${Boost_LIBRARIES})
 ADD_EXECUTABLE(FileMonitor FileMonitor.cpp)
 TARGET_LINK_LIBRARIES(FileMonitor ${Boost_LIBRARIES})
+ADD_EXECUTABLE(BankAccount BankAccount.cpp)
 
 SET(CONFIGURED_ONCE TRUE CACHE INTERNAL
         "A flag showing that CMake has configured at least once.")
