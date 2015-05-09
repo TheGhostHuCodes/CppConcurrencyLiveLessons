@@ -44,6 +44,7 @@ TARGET_LINK_LIBRARIES(FilePolling ${Boost_LIBRARIES})
 ADD_EXECUTABLE(Condition Condition.cpp)
 TARGET_LINK_LIBRARIES(Condition ${Boost_LIBRARIES})
 ADD_EXECUTABLE(MessageQueue MessageQueue.cpp)
+ADD_EXECUTABLE(AtomicityBug AtomicityBug.cpp)
 
 SET(CONFIGURED_ONCE TRUE CACHE INTERNAL
         "A flag showing that CMake has configured at least once.")
